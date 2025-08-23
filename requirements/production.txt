@@ -1,0 +1,9 @@
+-r base.txt
+
+# Production Server
+gunicorn==21.2.0
+daphne==4.0.0
+
+
+# Security
+django-environ==0.11.2

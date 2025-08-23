@@ -1,0 +1,61 @@
+"""
+Local settings template for DevsPlatform project.
+Copy this file to local.py and customize for your local development environment.
+"""
+
+from .development import *
+
+# Override any settings for your local environment here
+
+# Example: Use PostgreSQL locally
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'devsplatform_local',
+#         'USER': 'your_username',
+#         'PASSWORD': 'your_password',
+#         'HOST': 'localhost',
+#         'PORT': '5432',
+#     }
+# }
+
+# Example: Use Redis locally
+# CACHES = {
+#     'default': {
+#         'BACKEND': 'django_redis.cache.RedisCache',
+#         'LOCATION': 'redis://localhost:6379/0',
+#         'OPTIONS': {
+#             'CLIENT_CLASS': 'django_redis.client.DefaultClient',
+#         }
+#     }
+# }
+
+# Example: Social Auth Keys (get from Google/GitHub console)
+# GOOGLE_CLIENT_ID = 'your-google-client-id'
+# GOOGLE_CLIENT_SECRET = 'your-google-client-secret'
+# GITHUB_CLIENT_ID = 'your-github-client-id'
+# GITHUB_CLIENT_SECRET = 'your-github-client-secret'
+
+# Example: OpenAI API Key
+# OPENAI_API_KEY = 'your-openai-api-key'
+
+# Example: Email settings for testing
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+# EMAIL_HOST_USER = 'your-email@gmail.com'
+# EMAIL_HOST_PASSWORD = 'your-app-password'
+
+# Example: Different SECRET_KEY for local
+# SECRET_KEY = 'your-local-secret-key'
+
+# Example: Additional ALLOWED_HOSTS
+# ALLOWED_HOSTS += ['your-local-domain.test']
+
+# Example: Enable SQL queries logging
+# LOGGING['loggers']['django.db.backends'] = {
+#     'handlers': ['console'],
+#     'level': 'DEBUG',
+#     'propagate': False,
+# }
