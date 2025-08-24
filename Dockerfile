@@ -1,4 +1,4 @@
-FROM python:3.11-slim
+FROM python:3.12-slim
 
 # Set environment variables
 ENV PYTHONDONTWRITEBYTECODE=1
@@ -10,15 +10,17 @@ WORKDIR /app
 # Install system dependencies
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
-        postgresql-client \
-        build-essential \
-        libpq-dev \
+    postgresql-client \
+    build-essential \
+    libpq-dev \
+    curl \
     && rm -rf /var/lib/apt/lists/*
 
-# Install Python dependencies
-COPY requirements/ requirements/
-RUN pip install --upgrade pip \
-    && pip install -r requirements/production.txt
+# Copy requirements files
+COPY requirements/ ./requirements/
+
+# Install Python dependencies using pip
+RUN pip install --no-cache-dir -r requirements/development.txt
 
 # Copy project
 COPY . .
@@ -28,6 +30,7 @@ RUN mkdir -p static media
 
 # Collect static files
 RUN python manage.py collectstatic --noinput || true
+
 
 # Expose port
 EXPOSE 8000
